@@ -1,8 +1,8 @@
 package me.zenaro.validator;
 
-public class MissingSpecialCharactersValidation extends RegexValidation {
+import static me.zenaro.validator.RegexValidationConstants.SPECIAL_CHARACTERES_REGEX;
 
-    private static final String SPECIAL_CHARACTERES_REGEX = "[!@#$%^&*()-+]";
+public class MissingSpecialCharactersValidation extends RegexValidation {
 
     public MissingSpecialCharactersValidation() {
         super(SPECIAL_CHARACTERES_REGEX);

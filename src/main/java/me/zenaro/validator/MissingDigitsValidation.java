@@ -1,8 +1,8 @@
 package me.zenaro.validator;
 
-public class MissingDigitsValidation extends RegexValidation {
+import static me.zenaro.validator.RegexValidationConstants.DIGITS_REGEX;
 
-    private static final String DIGITS_REGEX = "[0-9]";
+public class MissingDigitsValidation extends RegexValidation {
 
     public MissingDigitsValidation() {
         super(DIGITS_REGEX);

@@ -1,8 +1,8 @@
 package me.zenaro.validator;
 
-public class MissingLowerCaseValidation extends RegexValidation {
+import static me.zenaro.validator.RegexValidationConstants.LOWER_CASE_REGEX;
 
-    private static final String LOWER_CASE_REGEX = "[a-z]";
+public class MissingLowerCaseValidation extends RegexValidation {
 
     public MissingLowerCaseValidation() {
         super(LOWER_CASE_REGEX);
