@@ -6,12 +6,12 @@ public abstract class RegexValidation implements IValidation<String> {
 
     private final Pattern pattern;
 
-    public RegexValidation(final String charecteresRequiredRegex) {
-        this.pattern = Pattern.compile(charecteresRequiredRegex);
+    public RegexValidation(final String regex) {
+        this.pattern = Pattern.compile(regex);
     }
 
     public boolean validate(final String value) {
-        return pattern.matcher(value).matches();
+        return pattern.matcher(value).find();
     }
 
 }
