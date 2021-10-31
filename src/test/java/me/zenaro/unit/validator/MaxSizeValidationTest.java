@@ -16,13 +16,13 @@ public class MaxSizeValidationTest {
 
     @CsvFileSource(resources = "/invalid_passwords_with_max_size.csv")
     @ParameterizedTest
-    public void whenDuplicateCharacterThenInvalid(final String password) {
+    public void whenMaxSizePasswordThenInvalid(final String password) {
         assertFalse(maxSizeValidation.validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
-    public void whenNotDuplicateCharacterThenValid(final String password) {
+    public void whenNotMaxSizePasswordThenValid(final String password) {
         assertTrue(maxSizeValidation.validate(password));
     }
 
