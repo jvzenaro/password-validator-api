@@ -16,7 +16,8 @@ public class MinSizeValidation implements IValidation<String> {
     }
 
     public boolean validate(final String value) {
-        return value != null && value.length() >= minSize;
+        return value != null && value
+                .length() >= minSize;
     }
 
 }

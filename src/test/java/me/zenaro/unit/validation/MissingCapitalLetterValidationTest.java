@@ -15,13 +15,15 @@ public class MissingCapitalLetterValidationTest {
     @CsvFileSource(resources = "/invalid_passwords_with_missing_capital_letter.csv")
     @ParameterizedTest
     public void whenWithoutCapitalLetterInPasswordThenInvalid(final String password) {
-        assertFalse(missingCapitalLetterValidation.validate(password));
+        assertFalse(missingCapitalLetterValidation
+                .validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenHaveCapitalLetterInPasswordThenValid(final String password) {
-        assertTrue(missingCapitalLetterValidation.validate(password));
+        assertTrue(missingCapitalLetterValidation
+                .validate(password));
     }
 
 }

@@ -19,9 +19,12 @@ public class PasswordValidation implements IValidation<String> {
     }
 
     public boolean validate(final String value) {
-        return validators.stream().allMatch(validator -> {
-            return validator.validate(value);
-        });
+        return validators
+                .stream()
+                .allMatch(validator -> {
+                    return validator
+                            .validate(value);
+                });
     }
 
 }

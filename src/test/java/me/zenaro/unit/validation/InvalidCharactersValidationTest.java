@@ -15,13 +15,15 @@ public class InvalidCharactersValidationTest {
     @CsvFileSource(resources = "/invalid_passwords_with_invalid_character.csv")
     @ParameterizedTest
     public void whenInvalidCharacterThenInvalid(final String password) {
-        assertFalse(invalidCharacterValidation.validate(password));
+        assertFalse(invalidCharacterValidation
+                .validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenNotInvalidCharacterThenValid(final String password) {
-        assertTrue(invalidCharacterValidation.validate(password));
+        assertTrue(invalidCharacterValidation
+                .validate(password));
     }
 
 }

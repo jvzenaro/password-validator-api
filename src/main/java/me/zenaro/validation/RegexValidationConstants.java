@@ -19,7 +19,7 @@ public final class RegexValidationConstants {
     public static final String DIGITS_REGEX = format(REGEX_GROUP, DIGITS);
     public static final String LOWER_CASE_REGEX = format(REGEX_GROUP, LOWER_CASE);
     public static final String SPECIAL_CHARACTERES_REGEX = format(REGEX_GROUP, SPECIAL_CHARACTERES);
-    public static final String INVALID_CHARACTERES_REGEX = format(REGEX_NEGATE_GROUP,
-            String.join(CAPITAL_LETTER, DIGITS, LOWER_CASE, SPECIAL_CHARACTERES));
+    public static final String INVALID_CHARACTERES_REGEX = format(REGEX_NEGATE_GROUP, String
+            .join(CAPITAL_LETTER, DIGITS, LOWER_CASE, SPECIAL_CHARACTERES));
 
 }

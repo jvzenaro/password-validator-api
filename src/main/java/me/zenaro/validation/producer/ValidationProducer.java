@@ -47,9 +47,10 @@ public class ValidationProducer {
     @Produces
     @Named("passwordValidation")
     List<IValidation<String>> passwordValidation() {
-        return List.of(duplicateCharacterValidation, invalidCharacterValidation, maxSizeValidation, minSizeValidation,
-                missingCapitalLetterValidation, missingDigitsValidation, missingSpecialCharacterValidation,
-                missingSpecialCharactersValidation);
+        return List
+                .of(duplicateCharacterValidation, invalidCharacterValidation, maxSizeValidation, minSizeValidation,
+                        missingCapitalLetterValidation, missingDigitsValidation, missingSpecialCharacterValidation,
+                        missingSpecialCharactersValidation);
     }
 
 }

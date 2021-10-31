@@ -17,13 +17,15 @@ public class MinSizeValidationTest {
     @CsvFileSource(resources = "/invalid_passwords_with_min_size.csv")
     @ParameterizedTest
     public void whenMinSizePasswordThenInvalid(final String password) {
-        assertFalse(minSizeValidation.validate(password));
+        assertFalse(minSizeValidation
+                .validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenNotMinSizePasswordThenValid(final String password) {
-        assertTrue(minSizeValidation.validate(password));
+        assertTrue(minSizeValidation
+                .validate(password));
     }
 
 }

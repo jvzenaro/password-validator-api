@@ -15,13 +15,15 @@ public class MissingLowerCaseValidationTest {
     @CsvFileSource(resources = "/invalid_passwords_with_missing_lower_case.csv")
     @ParameterizedTest
     public void whenWithoutLowerCaseInPasswordThenInvalid(final String password) {
-        assertFalse(missingLowerCaseValidation.validate(password));
+        assertFalse(missingLowerCaseValidation
+                .validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenHaveLowerCaseInPasswordThenValid(final String password) {
-        assertTrue(missingLowerCaseValidation.validate(password));
+        assertTrue(missingLowerCaseValidation
+                .validate(password));
     }
 
 }

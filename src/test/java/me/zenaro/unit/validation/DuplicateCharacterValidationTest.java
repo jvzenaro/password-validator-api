@@ -15,13 +15,15 @@ public class DuplicateCharacterValidationTest {
     @CsvFileSource(resources = "/invalid_passwords_with_duplicate_character.csv")
     @ParameterizedTest
     public void whenDuplicateCharacterThenInvalid(final String password) {
-        assertFalse(duplicateCharacterValidation.validate(password));
+        assertFalse(duplicateCharacterValidation
+                .validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenNotDuplicateCharacterThenValid(final String password) {
-        assertTrue(duplicateCharacterValidation.validate(password));
+        assertTrue(duplicateCharacterValidation
+                .validate(password));
     }
 
 }

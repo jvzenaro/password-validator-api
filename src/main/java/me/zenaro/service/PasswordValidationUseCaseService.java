@@ -19,7 +19,10 @@ public class PasswordValidationUseCaseService implements IPasswordValidationUseC
 
     @Override
     public Uni<Boolean> validate(final String password) {
-        return Uni.createFrom().item(password).map(passwordValidation::validate);
+        return Uni
+                .createFrom()
+                .item(password)
+                .map(passwordValidation::validate);
     }
 
 }

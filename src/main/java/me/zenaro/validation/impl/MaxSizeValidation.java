@@ -16,7 +16,8 @@ public class MaxSizeValidation implements IValidation<String> {
     }
 
     public boolean validate(final String value) {
-        return value != null && value.length() <= maxSize;
+        return value != null && value
+                .length() <= maxSize;
     }
 
 }

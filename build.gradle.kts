@@ -19,6 +19,8 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
     
     implementation("io.quarkus:quarkus-smallrye-openapi")
+
+    implementation("io.quarkus:quarkus-jacoco")
     
     implementation("io.quarkus:quarkus-arc")
     

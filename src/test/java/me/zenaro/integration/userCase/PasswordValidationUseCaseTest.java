@@ -26,14 +26,22 @@ public class PasswordValidationUseCaseTest {
             "/invalid_passwords_with_missing_special_character.csv" })
     @ParameterizedTest
     public void whenInvalidPasswordThenReturnFalse(final String password) {
-        passwordValidationUseCase.validate(password).subscribe().withSubscriber(UniAssertSubscriber.create())
+        passwordValidationUseCase
+                .validate(password)
+                .subscribe()
+                .withSubscriber(UniAssertSubscriber
+                        .create())
                 .assertItem(false);
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
     public void whenValidPasswordThenReturnTrue(final String password) {
-        passwordValidationUseCase.validate(password).subscribe().withSubscriber(UniAssertSubscriber.create())
+        passwordValidationUseCase
+                .validate(password)
+                .subscribe()
+                .withSubscriber(UniAssertSubscriber
+                        .create())
                 .assertItem(true);
     }
 
