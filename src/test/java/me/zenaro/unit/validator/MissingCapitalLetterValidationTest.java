@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import me.zenaro.validator.MissingCapitalLetterValidation;
-import me.zenaro.validator.MissingSpecialCharactersValidation;
 
 public class MissingCapitalLetterValidationTest {
 
