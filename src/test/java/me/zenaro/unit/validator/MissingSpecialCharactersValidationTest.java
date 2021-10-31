@@ -14,13 +14,13 @@ public class MissingSpecialCharactersValidationTest {
 
     @CsvFileSource(resources = "/invalid_passwords_with_missing_special_character.csv")
     @ParameterizedTest
-    public void whenWithoutDigitsInPasswordThenInvalid(final String password) {
+    public void whenWithoutSpecialCharactersInPasswordThenInvalid(final String password) {
         assertFalse(missingSpecialCharactersValidation.validate(password));
     }
 
     @CsvFileSource(resources = "/valid_passwords.csv")
     @ParameterizedTest
-    public void whenHaveDigitsInPasswordThenValid(final String password) {
+    public void whenHaveSpecialCharactersInPasswordThenValid(final String password) {
         assertTrue(missingSpecialCharactersValidation.validate(password));
     }
 
