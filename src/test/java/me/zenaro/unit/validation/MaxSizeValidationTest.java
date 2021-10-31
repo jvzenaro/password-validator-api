@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import me.zenaro.validation.MaxSizeValidation;
+import me.zenaro.validation.impl.MaxSizeValidation;
 
 public class MaxSizeValidationTest {
 

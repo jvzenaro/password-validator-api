@@ -1,8 +1,10 @@
-package me.zenaro.validation;
+package me.zenaro.validation.impl;
 
 import javax.inject.Singleton;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+import me.zenaro.validation.IValidation;
 
 @Singleton
 public class MinSizeValidation implements IValidation<String> {

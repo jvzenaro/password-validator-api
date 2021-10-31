@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import me.zenaro.validation.InvalidCharacterValidation;
+import me.zenaro.validation.impl.InvalidCharacterValidation;
 
 public class InvalidCharactersValidationTest {
 
