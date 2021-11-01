@@ -35,7 +35,7 @@ A execução se da de duas forma, via `gradle` ou via `docker`, onde em ambas a 
 
   Obs: É nescessário a instalação do Java 17.
 
-## Testando a API
+## Testando a Aplicação
 
 A documentação da aplicação do endpoint está exposta no swagger, de forma a ser possivel a chamada do mesmo via swagger.
 
@@ -45,6 +45,6 @@ Testando o endpoint utilizando curl:
 
 - `curl -X POST http://localhost:8080/password/validation --data "senha"`
 
-## Rodando os testes
+### Rodando os testes
 
 - ./gradlew clean test
