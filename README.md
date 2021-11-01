@@ -6,7 +6,7 @@ Para a solução foi pensado inicialmente em separação dos tipos de validaçõ
 
 - Caracteres duplicados
 - Caracteres inválidos
-- Tamanho minimo
+- Tamanho mínimo
 - Obrigatoriedade de 1 digito
 - Obrigatoriedade de 1 caracter especial
 - Obrigatoriedade de 1 letra maiúscula
