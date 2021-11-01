@@ -1,10 +1,10 @@
-package me.zenaro.validation.impl;
+package me.zenaro.component.validation.impl;
 
-import static me.zenaro.validation.RegexValidationConstants.CAPITAL_LETTER_REGEX;
+import static me.zenaro.component.validation.RegexValidationConstants.CAPITAL_LETTER_REGEX;
 
 import javax.inject.Singleton;
 
-import me.zenaro.validation.RegexValidation;
+import me.zenaro.component.validation.RegexValidation;
 
 @Singleton
 public class MissingCapitalLetterValidation extends RegexValidation {

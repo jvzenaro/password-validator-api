@@ -1,19 +1,19 @@
-package me.zenaro.service;
+package me.zenaro.domain.usecases.impl;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import io.smallrye.mutiny.Uni;
-import me.zenaro.usecases.IPasswordValidationUseCase;
-import me.zenaro.validation.impl.PasswordValidation;
+import me.zenaro.component.validation.impl.PasswordValidation;
+import me.zenaro.domain.usecases.IPasswordValidationUseCase;
 
-@Singleton
-public class PasswordValidationUseCaseService implements IPasswordValidationUseCase {
+@ApplicationScoped
+public class PasswordValidationUseCaseImpl implements IPasswordValidationUseCase {
 
     private final PasswordValidation passwordValidation;
 
     @Inject
-    public PasswordValidationUseCaseService(final PasswordValidation passwordValidation) {
+    public PasswordValidationUseCaseImpl(final PasswordValidation passwordValidation) {
         this.passwordValidation = passwordValidation;
     }
 

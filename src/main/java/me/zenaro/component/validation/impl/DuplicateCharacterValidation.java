@@ -1,14 +1,14 @@
-package me.zenaro.validation.impl;
+package me.zenaro.component.validation.impl;
 
 import javax.inject.Singleton;
 
-import me.zenaro.validation.IValidation;
+import me.zenaro.component.validation.IValidation;
 
 @Singleton
 public class DuplicateCharacterValidation implements IValidation<String> {
 
     @Override
-    public boolean validate(String value) {
+    public boolean validate(final String value) {
         return value
                 .length() == value
                         .chars()

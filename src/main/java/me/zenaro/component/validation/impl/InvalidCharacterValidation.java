@@ -1,10 +1,10 @@
-package me.zenaro.validation.impl;
+package me.zenaro.component.validation.impl;
 
-import static me.zenaro.validation.RegexValidationConstants.INVALID_CHARACTERES_REGEX;
+import static me.zenaro.component.validation.RegexValidationConstants.INVALID_CHARACTERES_REGEX;
 
 import javax.inject.Singleton;
 
-import me.zenaro.validation.RegexValidation;
+import me.zenaro.component.validation.RegexValidation;
 
 @Singleton
 public class InvalidCharacterValidation extends RegexValidation {
@@ -14,7 +14,7 @@ public class InvalidCharacterValidation extends RegexValidation {
     }
 
     @Override
-    public boolean validate(String value) {
+    public boolean validate(final String value) {
         return !super.validate(value);
     }
 

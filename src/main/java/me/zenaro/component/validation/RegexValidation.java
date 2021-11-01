@@ -1,4 +1,4 @@
-package me.zenaro.validation;
+package me.zenaro.component.validation;
 
 import java.util.regex.Pattern;
 
