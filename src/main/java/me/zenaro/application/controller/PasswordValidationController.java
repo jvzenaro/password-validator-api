@@ -3,21 +3,21 @@ package me.zenaro.application.controller;
 import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Response;
 
 import io.smallrye.mutiny.Uni;
-import me.zenaro.application.gateway.inbound.IPasswordValidationGateway;
+import me.zenaro.application.controller.response.PasswordValidationResponse;
+import me.zenaro.application.gateway.inbound.IPasswordValidationInboud;
 import me.zenaro.application.mapper.PasswordValidationMapper;
 import me.zenaro.domain.usecases.IPasswordValidationUseCase;
 
 @Path("/password/validation")
-public class PasswordValidationApiController implements IPasswordValidationGateway {
+public class PasswordValidationController implements IPasswordValidationInboud {
 
     private final IPasswordValidationUseCase passwordValidationUseCase;
     private final PasswordValidationMapper passwordValidationResponseMapper;
 
     @Inject
-    public PasswordValidationApiController(final IPasswordValidationUseCase passwordValidationUseCase,
+    public PasswordValidationController(final IPasswordValidationUseCase passwordValidationUseCase,
             final PasswordValidationMapper passwordValidationResponseMapper) {
         this.passwordValidationUseCase = passwordValidationUseCase;
         this.passwordValidationResponseMapper = passwordValidationResponseMapper;
@@ -25,7 +25,7 @@ public class PasswordValidationApiController implements IPasswordValidationGatew
 
     @Override
     @POST
-    public Uni<Response> validate(final String password) {
+    public Uni<PasswordValidationResponse> validate(final String password) {
         return passwordValidationUseCase
                 .validate(password)
                 .map(passwordValidationResponseMapper::toResponse);

@@ -1,19 +1,14 @@
 package me.zenaro.application.mapper;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.core.Response;
+import javax.inject.Singleton;
 
-@ApplicationScoped
+import me.zenaro.application.controller.response.PasswordValidationResponse;
+
+@Singleton
 public class PasswordValidationMapper {
 
-    public Response toResponse(final Boolean isValid) {
-        if (isValid)
-            return Response
-                    .ok()
-                    .build();
-        return Response
-                .status(Response.Status.BAD_REQUEST)
-                .build();
+    public PasswordValidationResponse toResponse(final Boolean isValid) {
+        return new PasswordValidationResponse(isValid);
     }
 
 }

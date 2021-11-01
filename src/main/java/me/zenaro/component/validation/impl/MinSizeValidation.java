@@ -1,5 +1,7 @@
 package me.zenaro.component.validation.impl;
 
+import static java.util.Optional.ofNullable;
+
 import javax.inject.Singleton;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
@@ -16,8 +18,10 @@ public class MinSizeValidation implements IValidation<String> {
     }
 
     public boolean validate(final String value) {
-        return value != null && value
-                .length() >= minSize;
+        return ofNullable(value)
+                .filter(v -> v
+                        .length() >= minSize)
+                .isPresent();
     }
 
 }
