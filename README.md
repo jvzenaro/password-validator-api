@@ -25,13 +25,13 @@ A execução se da de duas forma, via `gradle` ou via `docker`, onde em ambas a 
 
 ### Docker
 
-- docker build -t password-validator-api .
+- `docker build -t password-validator-api .`
 
-- docker run -p 8080:8080 password-validator-api
+- `docker run -p 8080:8080 password-validator-api`
 
 ### Gradle
 
-- ./gradlew clean quarkusDev
+- `./gradlew clean quarkusDev`
 
   Obs: É nescessário a instalação do Java 17.
 
@@ -47,4 +47,4 @@ Testando o endpoint utilizando curl:
 
 ### Rodando os testes
 
-- ./gradlew clean test
+- `./gradlew clean test`
