@@ -1,10 +1,16 @@
 FROM gradle:jdk17 as build
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN gradle clean build
+RUN gradle build -x test
 
-FROM fabric8/java-alpine-openjdk17-jre
+FROM openjdk:17-alpine
 ENV JAVA_OPTIONS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
-COPY --from=build /usr/src/app/target/lib/* /deployments/lib/
-COPY --from=build /usr/src/app/target/*-runner.jar /deployments/app.jar
-ENTRYPOINT [ "/deployments/run-java.sh" ]
+
+COPY --from=build --chown=1001 /usr/src/app/build/quarkus-app/lib/ /deployments/lib/
+COPY --from=build --chown=1001 /usr/src/app/build/quarkus-app/*.jar /deployments/
+COPY --from=build --chown=1001 /usr/src/app/build/quarkus-app/app/ /deployments/app/
+COPY --from=build --chown=1001 /usr/src/app/build/quarkus-app/quarkus/ /deployments/quarkus/
+
+RUN ls -la /deployments/
+
+ENTRYPOINT [ "java", "-jar", "/deployments/quarkus-run.jar" ]
