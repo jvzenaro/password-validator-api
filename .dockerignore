@@ -1,5 +1,17 @@
-*
-!build/*-runner
-!build/*-runner.jar
-!build/lib/*
-!build/quarkus-app/*
+# Gradle
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+.vscode/
+
+.git/
+README.md
