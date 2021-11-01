@@ -11,6 +11,7 @@ public class DuplicateCharacterValidation implements IValidation<String> {
     public boolean validate(final String value) {
         return value
                 .length() == value
+                        // .toLowerCase() -- Se validação considerar maiúsculas e minúsculas como iguais
                         .chars()
                         .distinct()
                         .count();
